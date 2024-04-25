@@ -394,6 +394,7 @@ Overall, the central region appears to command the highest resale prices, with p
 - Eastern and Northeastern Regions: These regions show a gradient of prices per square meter, with areas closer to the central region having warmer colors, indicating higher prices, which gradually decrease as one moves outward.
 - Northern Region: The price per square meter here seems more moderate compared to the central region, with mostly yellow tones indicating lower prices than the central region but variable across different locales.
 - Western Region: Similar to the northern region, the western region shows moderate prices per square meter, with a mix of yellow and orange tones, suggesting a range of values, with some areas having relatively higher prices.
+
 The overall pattern indicates that the central region tends to be the most expensive on a per square meter basis, with prices generally decreasing as one moves towards the outer regions of Singapore. However, pockets of higher value can be seen in non-central areas, possibly due to local factors such as proximity to amenities or transport links.
 <img width="704" alt="截屏2024-04-25 下午8 33 30" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/b0af2c10-ac0a-4bc7-9de5-816de3282a62">
 
