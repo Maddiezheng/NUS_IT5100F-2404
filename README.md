@@ -1,19 +1,43 @@
-# IT5100F Project: Predicting HDB Resale Price
+# IT5100F Final Project: Predicting HDB Resale Price
+<img width="1200" alt="截屏2024-04-25 下午8 54 01" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/881df37a-00a5-4d2f-a6e0-edc390d6afd5">
+
+## Course Information
+Course Title: IT5100F - Industry Readiness: Data Analytics and AI in Practice
+Professor：Akshay Narayan
+Semester: 2023/2024 Semester 2
+Credits: 4
 
 ## Project Group 3
 
 ## Content
 - [Task 1: Problem Definition](#task-1-problem-definition)
+  - [Objective & Problem Statement](#objective--problem-statement)
+  - [Data Information](#data-information)
 - [Task 2: Data Collection/Curation](#task-2-data-collectioncuration)
 - [Task 3: Data Preparation](#task-3-data-preparation)
 - [Task 4: Exploratory Data Analysis and Visualization](#task-4-exploratory-data-analysis-and-visualization)
+  - [Overall Analytics](#overall-analytics)
+  - [By Flat Type](#by-flat-type)
+  - [By Town](#by-town)
+  - [By Flat Model](#by-flat-model)
+  - [By Storeys](#by-storeys)
+  - [By Floor Area](#by-floor-area)
+  - [By Lease Commence Date](#by-lease-commence-date)
+  - [By Remaining Lease Year](#by-remaining-lease-year)
+  - [By Distance to Nearest Amenities](#by-distance-to-nearest-amenities)
+  - [By Travel Time](#by-travel-time)
+  - [By Location](#by-location)
+  - [HeatMap](#heatmap)
+  - [Statistical Analysis](#statistical-analysis)
 - [Task 5: Modeling and Visualization](#task-5-modeling-and-visualization)
+  - [Multi Linear Regression](#multi-linear-regression)
+  - [LightGBM](#lightgbm)
+  - [Random Forest](#random-forest)
 - [Task 6: Report Insights and Conclusions](#task-6-report-insights-and-conclusions)
-
 ---
 
-### Task 1: Problem Definition
-#### Objective & Problem Statement
+## Task 1: Problem Definition
+### Objective & Problem Statement
 In Singapore, public housing, or HDB (Housing Development Board) flats, are a primary residential choice for many young individuals and couples due to their affordability. The decision-making process for potential buyers involves multiple factors, such as location preference, proximity to amenities like MRT stations and shopping centers, and the selection of flat types. To aid in this decision-making, it's essential to predict the resale value of HDB flats accurately. This value is influenced by various factors, including location, nearby amenities, environmental surroundings, future urban development, and government policies.
 
 Our approach involves building a comprehensive data pipeline that uses historical transaction data and relevant property attributes. We will develop predictive models using three different techniques: Multiple Linear Regression, LightGBM, and Random Forest. Each model's performance will be evaluated using metrics such as Mean Squared Error (MSE) and R-squared (R²) to determine their effectiveness in predicting HDB flat resale prices.
@@ -22,7 +46,7 @@ This data pipeline is designed to serve multiple use cases, including reporting,
 
 By incorporating these models and evaluating their performance, we aim to provide young buyers with a clearer understanding of the key factors impacting HDB resale prices, thereby simplifying the purchasing process. This analysis will not only assist buyers in making more informed decisions but will also enhance our understanding of the housing market dynamics in Singapore.
 
-#### Data Information
+### Data Information
 1. Utilizing the latest dataset of HDB Resale Prices released on April 12, 2024, by [DATA.GOV.SG](http://data.gov.sg/), which includes HDB resale transaction data from January 1990 to April 2024(https://beta.data.gov.sg/collections/189/datasets/d_ebc5ab87086db484f88045b47411ebc5/view):
    -  HDB Resale  Prices approved between January 1990 and December 1999 (287,196 records)
    -  HDB Resale  Prices approved between January 2000 and February 2012 (369,651 records)
@@ -72,40 +96,40 @@ By incorporating these models and evaluating their performance, we aim to provid
 
 ---
 
-### Task 2: Data Collection/Curation
+## Task 2: Data Collection/Curation
 In this part, we loaded the datasets and merged them.
 
 ---
 
-### Task 3: Data Preparation
+## Task 3: Data Preparation
 In this part, in addition to using the HDB datasets originally downloaded on data.gov.sg, we also downloaded mrtsg.csv (https://github.com/hxchua/datadoubleconfirm/blob/master/datasets/mrtsg.csv) and shopping_mall_coordinates.csv (https://www.kaggle.com/datasets/karthikgangula/shopping-mall-coordinates) these two datasets. These two datasets include all MRT Stations and Shopping Malls in Singapore and their latitude and longitude respectively.
 
-#### 1. Data Conversion:
+### 1. Data Conversion:
 
 Converted 'month' and 'lease_commence_date' columns to datetime data type for better time series analysis.
-#### 2. Handling Missing Values:
+### 2. Handling Missing Values:
 
 Addressed missing values in the 'remaining_lease' column by recalculating it using the formula: remain_lease = lease_commence_date + 99 - resale_year. This ensures uniformity across datasets with differing formats for 'remaining_lease'.
-#### 3. Categorical Data Transformation:
+### 3. Categorical Data Transformation:
 
 Standardized the case for 'flat_model' and 'flat_type' columns to ensure consistency.
 Transformed 'storey_range' into a numerical average to refine the granularity of storey level data, enhancing accuracy in modeling.
-#### 4. Geospatial Data Integration and Proximity Analysis:
+### 4. Geospatial Data Integration and Proximity Analysis:
 
 Integrated OneMap APIs to fetch geospatial coordinates (latitude and longitude) for each HDB flat by merging 'Block' and 'Street Name'.
 Computed proximity to the nearest MRT stations and shopping malls using the geospatial coordinates and calculated walking distances.
-#### 5. Addressing Incomplete Geospatial Data:
+### 5. Addressing Incomplete Geospatial Data:
 
 For missing geospatial data, opted to remove records where addresses could not be located, given the dataset's large size and the method's complexity.
-#### 6. Feature Engineering:
+### 6. Feature Engineering:
 
 Developed features indicating the walking time to the nearest MRT station and shopping mall based on the calculated distances.
 Calculated town and flat model premiums by comparing median resale prices against overall median prices, providing insights into the cost implications of different HDB locations and models.
 
 ---
 
-### Task 4: Exploratory Data Analysis and Visualization
-#### Overall Analytics
+## Task 4: Exploratory Data Analysis and Visualization
+### Overall Analytics
 1. Median Resale Price Trend of HDB Flats (1990 - 2024)
 It can be seen that the Median Resale Price of HDB Flats is fluctuating and rising. The HDB resale price has 2 peaks. The first peak occurred in 1997, followed by a sharp decline, mainly due to the Asian financial crisis. Since then, the resale price of flats has risen again since 2006 and reached a new high in 2013. Subsequently, the price of resale of flats fell again, which coincided with a series of cooling measures in the public housing market. From 2014 to 2019, from the median point of view, the overall resale price of HDB is quite stable. However, since 2019, the price of HDB resale has risen again, which may have been affected by Covid-19 and inflation.
 <img width="930" alt="截屏2024-04-25 下午8 09 43" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/9823651e-e62d-4bdd-8896-4bf09bb3cbcf">
@@ -131,7 +155,7 @@ It can be seen that the resale prices of Type S1, Type S2, PREMIUM APARTMENT LOF
 The HDB Model Premiums for Type S2, Type S1, Premium Apartment Loft, Multi-Generation, Model A Maisonette, DBSS (Design, Build and Sell Scheme), Maisonette, Adjoined Flat, Apartment, Terrace, 3 Gen, and Premium Apartment are relatively high. In contrast, the HDB Model Premiums for Simplified, New Generation, 2 Room, and Standard types generally show negative figures.
 <img width="743" alt="截屏2024-04-25 下午8 13 00" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/c28cd3ea-5d75-4bac-bf89-e945513ea788">
 
-#### By Flat Type
+### By Flat Type
 1. Number of HDB Flats by Flat Type (1990 - 2024)
 4 ROOM has the largest number of resales. Between 1990 and 2024, there were as many as 350,000 resale transactions, followed by 3 ROOM and 5 ROOM. 1 The number of ROOM and Multi-Generation sales transactions is very limited.
 <img width="743" alt="截屏2024-04-25 下午8 15 44" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/2d6a247e-4cd4-4607-9114-2dba6a9ba7be">
@@ -157,7 +181,7 @@ The trend of the median resale price of these 7 Flat Models is roughly the same,
 <img width="752" alt="截屏2024-04-25 下午8 18 38" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/cfe8943b-4103-41d6-8bc8-45f3a3f847f3">
 
 
-#### By Town
+### By Town
 1. HDB Flat Type Resale Count by Town (1990-2024)
 Tampines, Bedok, Jurong West, Yishun's HDB resale volume is relatively large, and Lim Chu Kang, Bukit Timah, Central Area's HDB resale volume is relatively small. . Ang Mo Kio and Bedok, clementi, Geylang, Kallang, Toa Payoh mainly concentrated in the transactions of 3 ROOM. The rest of the town mainly focuses on the transactions of 4 ROOM.
 <img width="731" alt="截屏2024-04-25 下午8 19 12" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/e0c1ffde-8efb-4e92-9cfa-dc99bab383cd">
@@ -182,7 +206,7 @@ In 2012-2024, Bukit Timah's meadin price of HDB flats is the highest, up to S$71
 <img width="726" alt="截屏2024-04-25 下午8 20 39" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/e0b65a37-114b-40d9-9faa-6eeec7fbd128">
 <img width="744" alt="截屏2024-04-25 下午8 20 52" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/f2a4049a-5dc4-404f-80e4-7a9f0be24e32">
 
-#### By Flat Model
+### By Flat Model
 1. HDB Flat Models vs. Resale Price (1990-2024)
 Each violin plot represents the distribution of resale prices for that specific model over the period from 1990 to 2024. The thinnest part of a violin indicates fewer sales at that price point, while the widest part indicates a price point with more transactions. For example, if a violin is particularly wide at the bottom, this means there are many flats sold at lower prices. Conversely, if it is wide at the top, there are many at higher prices.
 
@@ -332,7 +356,7 @@ The overall pattern indicates that the central region tends to be the most expen
 <img width="744" alt="截屏2024-04-25 下午8 34 13" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/7ce4b96b-6100-4e26-91b8-dbbf4f02e650">
 
    
-#### Statistical Analysis
+### Statistical Analysis
 
 <img width="517" alt="截屏2024-04-25 下午8 31 44" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/7462780a-ee5a-40f3-b4b5-08f160c4360a">
 <img width="509" alt="截屏2024-04-25 下午8 32 04" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/306187aa-baee-4d20-9024-b94053263f7e">
@@ -340,20 +364,20 @@ The overall pattern indicates that the central region tends to be the most expen
 
 ---
 
-### Task 5: Modeling and Visualization
+## Task 5: Modeling and Visualization
 In this part, we trained 3 models: Multi Linear Regression, LightGBM, Random Forest
-#### Multi Linear Regression
+### Multi Linear Regression
 <img width="588" alt="截屏2024-04-25 下午8 35 35" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/1a3db3d1-8058-4903-a655-484d78db5424">
 <img width="740" alt="截屏2024-04-25 下午8 35 50" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/b828d1f5-953a-49aa-a0bd-6b97d797c11c">
 
 
-#### LightGBM
+### LightGBM
 The MSE for LightGBM is 729,604,786, which is significantly lower than that for Linear Regression, indicating that the predictions from the LightGBM model are much closer to the actual values. Lower MSE values generally signify better model performance, as they reflect smaller average errors in the predictions.
 
 The R² score, which measures the proportion of variance in the dependent variable that is predictable from the independent variables, is substantially higher for LightGBM (0.9722) compared to Linear Regression (0.8315). An R² score closer to 1 indicates that the model explains a higher proportion of the variance in the data.
 <img width="585" alt="截屏2024-04-25 下午8 36 27" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/90678cbd-7cef-4ba1-8917-197a3656edf3">
 
-##### Tuning the lightGBM Model
+#### Tuning the lightGBM Model
 We'll use Grid Search with cross-validation to find the optimal set of parameters. This method involves testing the model with various combinations of parameters and selecting the combination that results in the best score based on a specified metric, typically R² or Mean Squared Error for regression tasks.
 
 Optimal Parameters:
@@ -375,7 +399,7 @@ Cross-Validation R² Score: 0.975976889769278 Test Set R² Score: 0.976139092878
 Both scores are exceptionally high, indicating that the model explains about 97.6% of the variability in the target variable across different subsets of the dataset. Showing that the model is highly effective at making predictions that are very close to the actual data points.
 <img width="735" alt="截屏2024-04-25 下午8 37 48" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/866623f8-1cfc-4000-8691-4f1ee37a5714">
 
-#### Random Forest
+### Random Forest
 
 The Random Forest Regressor model achieved an out-of-bag R-squared score of approximately 0.9695, indicating that around 96.95% of the variance in the target variable is captured by the model during training.
 
@@ -384,7 +408,7 @@ When applied to the test set, the model achieved a Mean Squared Error (MSE) of a
 Next, we would further tuning the model parameters to see whether we could achieve better model performance.
 <img width="591" alt="截屏2024-04-25 下午8 39 30" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/da92fc8e-b155-41c9-8e7e-d1f51b20e6a3">
 
-##### Tuning the Random Forest Model
+#### Tuning the Random Forest Model
 Optimal Parameters:
 
 Max features: sqrt
@@ -411,7 +435,7 @@ We filtered out the features with importance greater than 0.01. Based on the fea
 
 ---
 
-### Task 6: Report Insights and Conclusions
+## Task 6: Report Insights and Conclusions
 In this project, linear regression, random forest and lightGBM are used to investigate the drivers of HDB resale price.
 
 Mutiple Linear Regression Model:
