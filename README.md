@@ -3,8 +3,11 @@
 
 ## Course Information
 Course Title: IT5100F - Industry Readiness: Data Analytics and AI in Practice
+
 Professor：Akshay Narayan
+
 Semester: 2023/2024 Semester 2
+
 Credits: 4
 
 ## Project Group 3
@@ -134,6 +137,7 @@ Calculated town and flat model premiums by comparing median resale prices agains
 It can be seen that the Median Resale Price of HDB Flats is fluctuating and rising. The HDB resale price has 2 peaks. The first peak occurred in 1997, followed by a sharp decline, mainly due to the Asian financial crisis. Since then, the resale price of flats has risen again since 2006 and reached a new high in 2013. Subsequently, the price of resale of flats fell again, which coincided with a series of cooling measures in the public housing market. From 2014 to 2019, from the median point of view, the overall resale price of HDB is quite stable. However, since 2019, the price of HDB resale has risen again, which may have been affected by Covid-19 and inflation.
 <img width="930" alt="截屏2024-04-25 下午8 09 43" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/9823651e-e62d-4bdd-8896-4bf09bb3cbcf">
 
+
 2. Trend of HDB Transactions (1990 - 2024)
 From 1990 to 1996, the transaction volume of HDB resale increased year by year. In the range from 1997 to 1999, the Resale volume of HDB increased significantly, with more than 50,000 transactions in 1999. There was a sharp decline in 2010-2013. The sharp decline in 2023-2024 is not because the number of HDB resale transactions has really decreased, but because the dataset is only counted until March 2024.
 <img width="932" alt="截屏2024-04-25 下午8 10 14" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/22790e27-f19e-4984-8c33-547f112329ba">
@@ -143,22 +147,27 @@ From 1990 to 1996, the transaction volume of HDB resale increased year by year. 
 It is obvious that the HDB resale price of Central Area rose sharply in 2013, and the increase was greater than that of any town. For other central regions such as Bukit Timah, Bishan, Bukit Merah, Queenstown, the resale price is also relatively high.
 <img width="738" alt="截屏2024-04-25 下午8 10 54" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/e0ab887f-2f50-4235-a83f-c0573d5bf2f5">
 
+
 4. Trend of Town Premiums for HDB Flats (1990 - 2024)
 In comparison to other towns, Bukit Timah, Bishan, Bukit Merah, Central Area, Kallang, Queenstown, Pasir Ris, Serangoon, Tampines, Punggol, and Sengkang exhibit a positive average town premium. This indicates that purchasing HDBs (Housing Development Board flats) in these areas requires a higher financial outlay compared to other regions. Among them, the town premiums in Bukit Timah, Bishan, and Bukit Merah are notably higher. Conversely, towns like Yishun, Jurong West, Jurong East, and Ang Mo Kio show a negative average town premium, suggesting that buying HDBs in these areas could be less costly compared to other regions.
 <img width="736" alt="截屏2024-04-25 下午8 11 47" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/e4590e7b-8d7a-49a6-b71b-69765a593293">
+
 
 5. Median Resale Price Trend of HDB Flats by Flat Model (1990 - 2024)
 It can be seen that the resale prices of Type S1, Type S2, PREMIUM APARTMENT LOFT, MULTI-GENERATION are relatively high, while the resale prices of Simplified, New Generation, 2 Room, Standard are relatively low.
 <img width="739" alt="截屏2024-04-25 下午8 12 31" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/7eb16b59-7486-42a2-af51-81ed6009aad1">
 
+
 6. Trend of Flat Model Premiums for HDB Flats (1990 - 2024)
 The HDB Model Premiums for Type S2, Type S1, Premium Apartment Loft, Multi-Generation, Model A Maisonette, DBSS (Design, Build and Sell Scheme), Maisonette, Adjoined Flat, Apartment, Terrace, 3 Gen, and Premium Apartment are relatively high. In contrast, the HDB Model Premiums for Simplified, New Generation, 2 Room, and Standard types generally show negative figures.
 <img width="743" alt="截屏2024-04-25 下午8 13 00" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/c28cd3ea-5d75-4bac-bf89-e945513ea788">
+
 
 ### By Flat Type
 1. Number of HDB Flats by Flat Type (1990 - 2024)
 4 ROOM has the largest number of resales. Between 1990 and 2024, there were as many as 350,000 resale transactions, followed by 3 ROOM and 5 ROOM. 1 The number of ROOM and Multi-Generation sales transactions is very limited.
 <img width="743" alt="截屏2024-04-25 下午8 15 44" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/2d6a247e-4cd4-4607-9114-2dba6a9ba7be">
+
 
 2. Yearly Counts of Flats by HDB Flat Type (1990 - 2024)
 From 1990 to 1996, 3 ROOM had the largest resale transaction volume, but since 1997, 4 ROOM has gradually become the Flat Type with the largest resale transaction volume. 1998 and 1999 were the two years with the largest number of resale transactions.
@@ -166,15 +175,18 @@ From 1990 to 1996, 3 ROOM had the largest resale transaction volume, but since 1
 PS: The number of resale transactions in 2024 is low because datasets only counted until March 2024, but it can still be seen that the current type of 4 ROOM in 2024 is still the mainstream of resale transactions.
 <img width="521" alt="截屏2024-04-25 下午8 16 14" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/d64b8446-61d8-467a-af59-3e05fb8d5fa1">
 
+
 3. Percentage of HDB Flats by Flat Type (1990 - 2024)
 4 ROOM accounts for the highest proportion of all resale transactions, accounting for 38.4%, followed by 3 ROOM, accounting for 31.4%; the least is 1 ROOM and MULTI-GENERATION, only 0.1%
 <img width="651" alt="截屏2024-04-25 下午8 16 38" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/85f55307-5c95-4747-988c-19a489a15a0f">
+
 
 4. Sales Count by Flat Type (1990-2000), Sales Count by Flat Type (2001-2011), Sales Count by Flat Type (2012-2024)
 In 2001-2011 and 2012-2024, 4 ROOM was the Flat Type with the highest resale transaction volume, but in 1990-2000, 3 ROOM was the Flat Type with the highest resale transaction volume. From the picture, it can be seen that 3 ROOM, 4 ROOM, 5 ROOM, EXECUTIVE are all mainstream resale Flat types.
 <img width="724" alt="截屏2024-04-25 下午8 17 42" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/2190623f-b256-4684-9bb1-bfc919ffcec6">
 <img width="728" alt="截屏2024-04-25 下午8 18 03" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/910fadfb-ed4e-4029-8412-ab7bd21048ff">
 <img width="732" alt="截屏2024-04-25 下午8 18 16" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/1259172e-9684-405c-aef0-38aed7cb6955">
+
 
 5. Resale Price Trend in 1990-2024 by All Flat Type
 The trend of the median resale price of these 7 Flat Models is roughly the same, rising year by year from 1990 to 1995. Prices were relatively stable in 1996-2007. It began to rise slowly after 2007. Among them, the price of MULTI-GENERATION and EXECUTIVE is relatively high.
@@ -185,6 +197,7 @@ The trend of the median resale price of these 7 Flat Models is roughly the same,
 1. HDB Flat Type Resale Count by Town (1990-2024)
 Tampines, Bedok, Jurong West, Yishun's HDB resale volume is relatively large, and Lim Chu Kang, Bukit Timah, Central Area's HDB resale volume is relatively small. . Ang Mo Kio and Bedok, clementi, Geylang, Kallang, Toa Payoh mainly concentrated in the transactions of 3 ROOM. The rest of the town mainly focuses on the transactions of 4 ROOM.
 <img width="731" alt="截屏2024-04-25 下午8 19 12" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/e0c1ffde-8efb-4e92-9cfa-dc99bab383cd">
+
 
 2. Median Resale Price Trend of 4-Room HDB Flats by Town (1990 - 2024)
 Since 2014, the resale of 4 ROOM has surged, and the transaction volume has begun to decline again in 2018. It was not until 2020 that the resale of 4 ROOM began to surge again. The three regions of Queestown, Bukit Merah and Central Area have always been relatively high in the resale of 4 ROOM.
@@ -206,6 +219,7 @@ In 2012-2024, Bukit Timah's meadin price of HDB flats is the highest, up to S$71
 <img width="726" alt="截屏2024-04-25 下午8 20 39" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/e0b65a37-114b-40d9-9faa-6eeec7fbd128">
 <img width="744" alt="截屏2024-04-25 下午8 20 52" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/f2a4049a-5dc4-404f-80e4-7a9f0be24e32">
 
+
 ### By Flat Model
 1. HDB Flat Models vs. Resale Price (1990-2024)
 Each violin plot represents the distribution of resale prices for that specific model over the period from 1990 to 2024. The thinnest part of a violin indicates fewer sales at that price point, while the widest part indicates a price point with more transactions. For example, if a violin is particularly wide at the bottom, this means there are many flats sold at lower prices. Conversely, if it is wide at the top, there are many at higher prices.
@@ -217,6 +231,7 @@ Median Prices: The white dot in the center of the colored area represents the me
 Outliers: The lines extending from the main body of the violins suggest there are outliers in the data, with some flats selling for much higher or lower prices than the typical range. Like Improved, Model A and Adjioned Flat.
 
 <img width="739" alt="截屏2024-04-25 下午8 21 33" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/1c83e940-9f60-4b67-9b95-b734b0bc14ad">
+
 
 2. Trends of HDB Resale Prices on Each Flat Type (1990-2024)
 The data distribution of 2 Room, IMPROVED MAISONETTE, PREMIUM MAISONETTE, PREMIUM APARTMENT LOFT and 3 GEN are relatively sparse and not carried out much in many years. Transaction. DBSS, Type S1, Type S2, ADJOINEd FLAT, 3 Gen's HDB Resale Prices have a higher starting point and a larger price range.
@@ -233,6 +248,7 @@ The data distribution of 2 Room, IMPROVED MAISONETTE, PREMIUM MAISONETTE, PREMIU
 <img width="773" alt="截屏2024-04-25 下午8 24 50" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/9b4e0e0a-23d4-4afb-aed2-e7e26333e8b1">
 <img width="754" alt="截屏2024-04-25 下午8 25 00" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/bba387be-f6ee-4fbb-8bb3-8d450f324a5b">
 
+
 3. Trends of HDB Resale Prices for Each Flat Type
 There are more flat models in the flat types of 2 ROOM, 3 ROOM, 4 ROOM and 5 ROOM. Among them, the price of Terrace model is relatively high, the price of Type S1 model of 4 ROOM is relatively high, and the price of DBSS and Type S2 of 5 ROOM is relatively high. And most flat types have increased the range of price range since 2010.
 <img width="766" alt="截屏2024-04-25 下午8 25 27" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/30e6ef9e-75fc-43e6-8157-428c8f06ec91">
@@ -245,9 +261,11 @@ There are more flat models in the flat types of 2 ROOM, 3 ROOM, 4 ROOM and 5 ROO
 It can be seen that generally speaking, the higher the floor, the higher the price. The price range of high floors is not as wide as that of low floors.
 <img width="739" alt="截屏2024-04-25 下午8 26 36" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/0b5c80a2-b6f3-42ed-baa6-da75852bef05">
 
+
 2. Median Resale Prices by Storey Range (1990 - 2024)
 It can be seen that generally speaking, the higher the floor, the higher the price.
 <img width="765" alt="截屏2024-04-25 下午8 26 58" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/234c870c-97e7-4e01-9caa-2130301680c4">
+
 
 3. Scatter Plot of Resale Prices by Storey Range (1990 - 2024)
 In the lower floors, there are mostly EXECUTIVE and MULTI-GENERATION models; in the middle floors, EXECUTIVE and 5 ROOM models are more common; in the higher floors, 4 ROOM and 5 ROOM models are more prevalent.
@@ -262,6 +280,7 @@ The trendline suggests a positive correlation, meaning that as the floor area in
 
 In addition, The scatter plot suggests that there is a wide range of resale prices for properties with similar floor areas, indicating other factors beyond floor area may significantly influence the resale price, such as location, property age, market conditions, or specific property features.
 <img width="711" alt="截屏2024-04-25 下午8 27 59" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/8119c893-b7c6-4618-8909-67c1fd6f60a0">
+
 
 2. Resale Price Trend by Floor Area Sqm in 2012 - 2022
 The resale price generally increases with the size of the flat, as denoted by the floor area. The 2-room, 3-room, 4-room, 5-room, and Executive flats, which are more common, form distinctive clusters with increasing floor areas and resale prices. 1 ROOM and multi-generation flats, while less numerous, show even higher resale prices, reflecting their larger sizes. The plot demonstrates that resale prices are stratified according to flat type, and there is a wide spread of resale prices within each flat type, especially as the floor area increases. This variation within each flat type category suggests other factors, in addition to floor area and flat type, affect the resale price.
@@ -295,6 +314,7 @@ The plot on the right depicts the median resale price versus the distance from t
 
 <img width="750" alt="截屏2024-04-25 下午8 30 03" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/dd1f3ce3-badb-4438-9d77-23f08eb09741">
 
+
 2. Resale Price vs Distance from Nearest MRT / Shopping Mall
 The left plot shows resale prices versus distance from the nearest MRT station. It indicates a high density of properties with varying resale prices close to MRT stations, and a general decrease in resale prices as the distance from MRT stations increases.
 
@@ -302,7 +322,6 @@ The right plot shows resale prices versus distance from the nearest shopping mal
 
 Both plots collectively suggest that proximity to MRT stations and shopping malls has a considerable impact on property resale prices in Singapore, with properties closer to these amenities generally commanding higher resale prices.
 <img width="750" alt="截屏2024-04-25 下午8 30 31" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/5a2e96a9-19cd-4f7b-b267-ad453059851f">
-
 
 
 ### By travel time
@@ -313,6 +332,7 @@ The right plot depicts median resale prices against travel time to the nearest m
 
 Both plots suggest a trend where convenience, indicated by shorter travel times to key amenities like MRT stations and malls, has a positive correlation with the median resale price of properties. However, there are some data points with high resale prices even at longer travel times, which could be due to other location-specific factors.
 <img width="743" alt="截屏2024-04-25 下午8 30 58" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/9eb8ed88-c179-4e19-ae6d-a6d9e1bec364">
+
 
 2. Resale Price vs Travel Time from Nearest MRT / Shopping Mall
 The plot on the left shows resale prices versus travel time to the nearest MRT station. There is a large concentration of properties with a wide range of prices close to MRT stations (travel time close to 0). Prices generally decrease with longer travel times, but not uniformly, and there are properties with high resale prices even with longer travel times to MRT.
@@ -334,6 +354,7 @@ Western Region: There's a diverse range of resale prices, with pockets of both h
 
 Overall, the central region appears to command the highest resale prices, with pockets of high-value properties scattered throughout the eastern, northeastern, and western regions. The northern region seems to have more uniformly moderate prices. This pattern suggests that central and accessible areas tend to have higher property values, reflecting the desirability of living closer to the city center or other amenities.
 <img width="670" alt="截屏2024-04-25 下午8 32 53" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/cad558c2-c1cf-4c4b-8de8-d4229e255e80">
+
 
 2. Distribution of HDB Price Per Square Meter by Location
 - Central Region: This area displays some of the highest values, as indicated by the presence of red tones, suggesting that HDB flats in the central region have a higher price per square meter, reflecting high demand and desirability.
@@ -431,6 +452,7 @@ A Cross Validation R² Score of 0.9725 suggests that the model effectively captu
 
 With a Test set R² score of 0.9736, the model demonstrates strong generalization to unseen data, highlighting its robust performance beyond the training set.
 <img width="556" alt="截屏2024-04-25 下午8 40 41" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/90c8263c-3f5a-49a5-b75e-d671f45a79d4">
+
 We filtered out the features with importance greater than 0.01. Based on the feature importance plot, we can obviously observe that the top five features driving the resale price of HDB are year, floor_area_sqm, flat_model_premium and town_premium and flat_type_3_ROOM.
 
 ---
