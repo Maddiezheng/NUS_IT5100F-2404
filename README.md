@@ -434,7 +434,7 @@ The R² score, which measures the proportion of variance in the dependent variab
 #### Tuning the lightGBM Model
 We'll use Grid Search with cross-validation to find the optimal set of parameters. This method involves testing the model with various combinations of parameters and selecting the combination that results in the best score based on a specified metric, typically R² or Mean Squared Error for regression tasks.
 
-Optimal Parameters:
+- Optimal Parameters:
 
 Learning Rate: 0.1
 
@@ -446,7 +446,7 @@ Number of Leaves: 91
 
 These parameters suggest a model configuration that is robust, allowing for a deeper tree structure (max depth of 20 and 91 leaves), increased complexity (which is handled well by the large number of estimators), and a relatively faster convergence (learning rate of 0.1).
 
-Performance:
+- Performance:
 
 Cross-Validation R² Score: 0.975976889769278 Test Set R² Score: 0.9761390928787514
 
@@ -463,7 +463,7 @@ Next, we would further tuning the model parameters to see whether we could achie
 <img width="591" alt="截屏2024-04-25 下午8 39 30" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/da92fc8e-b155-41c9-8e7e-d1f51b20e6a3">
 
 #### Tuning the Random Forest Model
-Optimal Parameters:
+- Optimal Parameters:
 
 Max features: sqrt
 
@@ -477,7 +477,7 @@ Number of estimators: 30
 
 The optimal parameter settings indicate that 'sqrt' is chosen as the maximum number of features, indicating the square root of the number of features considered when splitting each node. The absence of a maximum depth restriction allows the decision trees to grow to any depth, potentially aiding in better fitting the data. Furthermore, a minimum samples split of 5 and minimum samples leaf of 1 help control model complexity to prevent overfitting.
 
-Performance:
+- Performance:
 
 By tuning the hyperparameters, we enhanced the performance of the random forest model.
 
