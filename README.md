@@ -1,5 +1,7 @@
 # IT5100F Final Project: Predicting HDB Resale Price
 <img width="1200" alt="截屏2024-04-25 下午8 54 01" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/881df37a-00a5-4d2f-a6e0-edc390d6afd5">
+(The picture is of our team member, Fan's future home: SkyTerrace @Dawson)
+
 
 ## Course Information
 Course Title: IT5100F - Industry Readiness: Data Analytics and AI in Practice
@@ -479,7 +481,14 @@ Random Forest:
 
 
 We compare these three models from several aspects.
-<img width="533" alt="截屏2024-04-25 下午8 44 44" src="https://github.com/Maddiezheng/NUS_IT5100F-2404/assets/44678784/9c07c782-03fe-4b8d-a096-ef1baa0d4e38">
+
+|Model |MSE |R^2|Cross-Validation R^2|OOB R^2|
+|------------|------|------|------|------|
+| Multiple Linear Regression Model |4420438749.1606|0.8315| / | / |
+| LightGBM  |729604786.8829|0.9722|/ | / |                 
+| LightGBM(Optimized) |/| 0.9761 | 0.9760 | / |
+| Random Forest |713820681.3898| 0.9728 | / | 0.9695 |
+| Random Forest(Optimized) |/|  0.9736 | 0.9725 | / |
 
 - Accuracy: The LightGBM model generally exhibited superior accuracy and a higher R² value compared to both the Random Forest and Linear Regression models, indicating a better fit to the data variability.
 
